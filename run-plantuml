@@ -5,7 +5,7 @@ __run_plantuml() {
     local host_src_volume="${PWD}"
     local container_dest_volume="/work"
 
-    docker run --volume="${host_src_volume}:${container_dest_volume}" --workdir="${container_dest_volume}" --rm "${docker_image}" $@
+    docker run --volume="${host_src_volume}:${container_dest_volume}" --workdir="${container_dest_volume}" --rm --attach=stdin --attach=stdout --interactive "${docker_image}" $@
 }
 
 __run_plantuml $@
