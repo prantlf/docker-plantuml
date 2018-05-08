@@ -1,4 +1,4 @@
-FROM anapsix/alpine-java:jre
+FROM anapsix/alpine-java:latest
 MAINTAINER miy4 <miy4t7l@gmail.com>
 
 ENV PLANTUML_VERSION 1.2018.5
