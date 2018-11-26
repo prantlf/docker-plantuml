@@ -32,6 +32,9 @@ or
 $ run-plantuml [PLANTUML OPTIONS and ARGUMENTS]
 ```
 
+`docker run` and `run-plantuml` accept and pass a set of parameters to PlantUML CLI.  
+See `docker run miy4/plantuml -h` or `run-plantuml -h` output for more details.
+
 ### Example
 
 ```sh
