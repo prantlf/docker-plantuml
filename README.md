@@ -40,3 +40,8 @@ See `docker run miy4/plantuml -h` or `run-plantuml -h` output for more details.
 ```sh
 $ run-plantuml -tpng -charset utf-8 sequece_diagram.uml
 ```
+
+### License
+
+MIT
+
