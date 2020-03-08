@@ -15,9 +15,11 @@ run ::
 
 tag ::
 	docker tag plantuml prantlf/plantuml:jre8-alpine
+	docker tag plantuml prantlf/plantuml:latest
 
 login ::
 	docker login --username=prantlf
 
 push ::
 	docker push prantlf/plantuml:jre8-alpine
+	docker push prantlf/plantuml:latest
