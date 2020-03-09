@@ -26,16 +26,24 @@ Print usage description with command-line parameters:
 docker run --rm -it prantlf/plantuml
 ```
 
-For example, generating an image usin `-tpng -charset utf-8 diagram.puml`:
+For example, generate a diagram image for `diagram.puml`:
 
 ```
-docker run --rm -it -v ${PWD}:/work -w /work plantuml -tpng -charset utf-8 diagram.puml
+docker run --rm -it -v ${PWD}:/work -w /work plantuml diagram.puml
 ```
 
-### Example
+You can also put a [`run-plantuml`] script to `PATH`:
 
-```sh
-$ run-plantuml -tpng -charset utf-8 sequece_diagram.uml
+```
+#!/binsh
+
+docker run --rm -it -v ${PWD}:/work -w /work plantuml "$@"
+```
+
+and execute it from any location by supplying PlantUML parameters to it, for example:
+
+```
+run-plantuml diagram.puml
 ```
 
 ## Build, Test and Publish
@@ -54,9 +62,13 @@ Build a new local image:
 
     make build
 
-Run the diagran generator using an interactive shell inside the created image:
+Print the help for the diagram generator:
 
-    make run
+    make run-help
+
+Generate an image for a diagram sample:
+
+    make run-example
 
 Tag the local image for pushing:
 
@@ -85,3 +97,4 @@ Licensed under the MIT license.
 [Alpine Linux]: https://alpinelinux.org/
 [PlantUML]: https://plantuml.com/
 [Graphviz]: https://www.graphviz.org/
+[`run-plantuml`]: examples/run-plantuml
