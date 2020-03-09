@@ -8,9 +8,14 @@
 
 ## Tags
 
-- [`jre8-alpine`]
+The following [tags] are available for the `prantlf/plantuml` image:
+
+- `latest`
+- `jre8-alpine`
 
 ## Install
+
+Download the latest image to your disk:
 
 ```
 docker pull prantlf/plantuml
@@ -91,7 +96,7 @@ Licensed under the MIT license.
 
 [Docker]: https://www.docker.com/
 [This image]: https://hub.docker.com/repository/docker/prantlf/plantuml
-[`jre8-alpine`]: https://hub.docker.com/repository/docker/prantlf/plantuml/tags
+[`tags`]: https://hub.docker.com/repository/docker/prantlf/plantuml/tags
 [openjdk repository]: https://hub.docker.com/_/openjdk
 [OpenJDK]: https://openjdk.java.net/
 [Alpine Linux]: https://alpinelinux.org/
