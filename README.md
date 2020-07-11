@@ -11,7 +11,6 @@
 The following [tags] are available for the `prantlf/plantuml` image:
 
 - `latest`
-- `jre8-alpine`
 
 ## Install
 
@@ -19,8 +18,6 @@ Download the latest image to your disk:
 
 ```
 docker pull prantlf/plantuml
-# or
-docker pull prantlf/plantuml:jre8-alpine
 ```
 
 ## Use
@@ -34,15 +31,17 @@ docker run --rm -it prantlf/plantuml
 For example, generate a diagram image for `diagram.puml`:
 
 ```
-docker run --rm -it -v ${PWD}:/work -w /work plantuml diagram.puml
+docker run --rm -it -v "${PWD}":/work -w /work \
+  prantlf/plantuml diagram.puml
 ```
 
 You can also put a [`run-plantuml`] script to `PATH`:
 
 ```
-#!/binsh
+#!/bin/sh
 
-docker run --rm -it -v ${PWD}:/work -w /work plantuml "$@"
+docker run --rm -it -v "${PWD}:/work" -w /work \
+  prantlf/plantuml "$@"
 ```
 
 and execute it from any location by supplying PlantUML parameters to it, for example:
@@ -53,7 +52,7 @@ run-plantuml diagram.puml
 
 ## Build, Test and Publish
 
-The local image is built as `plantuml` and pushed to the docker hub as `prantlf/plantuml:jre8-alpine`.
+The local image is built as `plantuml` and pushed to the docker hub as `prantlf/plantuml:latest`.
 
 Remove an old local image:
 
@@ -96,7 +95,7 @@ Licensed under the MIT license.
 
 [Docker]: https://www.docker.com/
 [This image]: https://hub.docker.com/repository/docker/prantlf/plantuml
-[`tags`]: https://hub.docker.com/repository/docker/prantlf/plantuml/tags
+[tags]: https://hub.docker.com/repository/docker/prantlf/plantuml/tags
 [openjdk repository]: https://hub.docker.com/_/openjdk
 [OpenJDK]: https://openjdk.java.net/
 [Alpine Linux]: https://alpinelinux.org/
